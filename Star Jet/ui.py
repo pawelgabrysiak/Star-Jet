@@ -1,26 +1,3 @@
-"""star jet/
-├── .venv/
-├── assets/
-│   ├── images/
-│   │   └── explosion/
-│   │       ├── background.png
-│   │       ├── enemy.png
-│   │       ├── icon.png
-│   │       └── player.png
-│   └── sounds/
-│       ├── explosion.wav
-│       ├── laser.wav
-│       └── Laser heavy duty.wav
-├── bullet.py
-├── effects.py
-├── enemy.py
-├── game_state.py
-├── main.py
-├── player.py
-├── settings.py
-└── ui.py
-"""
-# ui.py
 # Moduł elementów interfejsu użytkownika: przyciski, napisy i licznik FPS.
 
 import pygame
