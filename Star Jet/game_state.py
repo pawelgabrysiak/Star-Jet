@@ -1,5 +1,3 @@
-# game_state.py
-# ——————————————————————————————
 import pygame, random, os
 from settings import SCREEN_WIDTH, SCREEN_HEIGHT, FPS, BONUS_SPAWN_TICKS
 from player import Player
