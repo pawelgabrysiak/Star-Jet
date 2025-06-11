@@ -3,6 +3,8 @@ import os
 
 class Explosion(pygame.sprite.Sprite):
     """Animacja wybuchu po zniszczeniu wroga."""
+    frames_cache = []  # cache klatek, żeby nie ładować za każdym razem
+
     def __init__(self, x, y):
         super().__init__()
         self.frames = self.load_frames()
@@ -13,13 +15,18 @@ class Explosion(pygame.sprite.Sprite):
         self.counter = 0
 
     def load_frames(self):
-        """Ładujemy klatki animacji z folderu assets/images/explosion."""
+        """Ładujemy klatki animacji z folderu assets/explosion (cache)."""
+        if Explosion.frames_cache:
+            return Explosion.frames_cache
+
         frames = []
         base_path = os.path.join("assets", "images", "explosion")
         for i in range(1, 17):
             path = os.path.join(base_path, f"explosion{i}.png")
             image = pygame.image.load(path).convert_alpha()
             frames.append(image)
+
+        Explosion.frames_cache = frames
         return frames
 
     def update(self):
