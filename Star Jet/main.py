@@ -3,6 +3,7 @@ import os
 from settings import SCREEN_WIDTH, SCREEN_HEIGHT, FPS
 from game_state import GameState
 from ui import FPSCounter
+from effects import Explosion  # Importujemy klasę Explosion z pliku effects.py
 
 def main():
     """Główna funkcja: inicjalizacja Pygame i pętla gry."""
@@ -14,6 +15,9 @@ def main():
     icon_path = os.path.join("assets", "images", "icon.png")
     icon = pygame.image.load(icon_path).convert_alpha()
     pygame.display.set_icon(icon)
+
+    # PRELOAD klatek wybuchu
+    Explosion.preload_frames()
 
     clock = pygame.time.Clock()
     game = GameState(screen)
