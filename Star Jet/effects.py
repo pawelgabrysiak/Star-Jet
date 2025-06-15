@@ -16,7 +16,7 @@ class Explosion(pygame.sprite.Sprite):
 
     @staticmethod
     def preload_frames():
-        """Ładujemy klatki animacji z folderu assets/images/explosion (cache), niezależnie od katalogu roboczego."""
+        """Ładujemy klatki animacji z folderu assets/explosion (cache), niezależnie od katalogu roboczego."""
         if Explosion.frames_cache:
             return Explosion.frames_cache
 
