@@ -12,7 +12,8 @@ def main():
     pygame.display.set_caption("Star Jet")
 
     # Ustawienie ikony okna
-    icon_path = os.path.join("assets", "images", "icon.png")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    icon_path = os.path.join(base_dir, "assets", "icon.png")
     icon = pygame.image.load(icon_path).convert_alpha()
     pygame.display.set_icon(icon)
 

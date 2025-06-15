@@ -10,8 +10,13 @@ class GameState:
     def __init__(self, screen):
         self.screen = screen
         self.font = pygame.font.SysFont(None,36)
-        self.background = pygame.image.load(os.path.join("assets","images","background.png")).convert()
-        self.explosion_sound = pygame.mixer.Sound(os.path.join("assets","sounds","explosion.wav"))
+
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        bg_path = os.path.join(base_dir, "assets", "background.png")
+        explosion_sound_path = os.path.join(base_dir, "assets", "explosion_sound.wav")
+
+        self.background = pygame.image.load(bg_path).convert()
+        self.explosion_sound = pygame.mixer.Sound(explosion_sound_path)
 
         r = pygame.Rect((SCREEN_WIDTH-200)//2,(SCREEN_HEIGHT-60)//2,200,60)
         self.play_button = Button("GRAJ", r, self.font)

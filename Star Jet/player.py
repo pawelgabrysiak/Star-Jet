@@ -6,7 +6,9 @@ class Player(pygame.sprite.Sprite):
     """Gracz z HP i możliwością homingu."""
     def __init__(self):
         super().__init__()
-        path = os.path.join("assets","images","player.png")
+        
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.join(base_dir, "assets","player.png")
         img = pygame.image.load(path).convert_alpha()
         w,h = img.get_size()
         # skalowanie
@@ -19,7 +21,7 @@ class Player(pygame.sprite.Sprite):
         self.max_health = PLAYER_MAX_HEALTH
         self.homing = False
         self.homing_ticks = 0
-        self.laser_sound = pygame.mixer.Sound(os.path.join("assets","sounds","Laser heavy duty.wav"))
+        self.laser_sound = pygame.mixer.Sound(os.path.join(base_dir, "assets","Laser heavy duty.wav"))
 
     def update(self, keys):
         if keys[pygame.K_LEFT] and self.rect.left>0:   self.rect.x -= PLAYER_SPEED

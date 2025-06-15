@@ -5,7 +5,10 @@ class Enemy(pygame.sprite.Sprite):
     """Wróg z HP i paskiem zdrowia."""
     def __init__(self):
         super().__init__()
-        path = os.path.join("assets","images","enemy.png")
+        
+        base_dir = os.path.dirname(os.path.abspath(__file__)) # ustalamy bazowy katalog
+
+        path = os.path.join(base_dir, "assets","enemy.png")
         img = pygame.image.load(path).convert_alpha()
         w,h = img.get_size()
         self.image = pygame.transform.scale(img, (w//SCALE_FACTOR, h//SCALE_FACTOR))

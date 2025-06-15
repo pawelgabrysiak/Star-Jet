@@ -16,12 +16,14 @@ class Explosion(pygame.sprite.Sprite):
 
     @staticmethod
     def preload_frames():
-        """Ładujemy klatki animacji z folderu assets/explosion (cache)."""
+        """Ładujemy klatki animacji z folderu assets/images/explosion (cache), niezależnie od katalogu roboczego."""
         if Explosion.frames_cache:
             return Explosion.frames_cache
 
+        # Ustal ścieżkę względem pliku effects.py
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        base_path = os.path.join(base_dir, "assets", "explosion")
         frames = []
-        base_path = os.path.join("assets", "images", "explosion")
         for i in range(1, 17):
             path = os.path.join(base_path, f"explosion{i}.png")
             image = pygame.image.load(path).convert_alpha()
@@ -29,6 +31,10 @@ class Explosion(pygame.sprite.Sprite):
 
         Explosion.frames_cache = frames
         return frames
+
+    def load_frames(self):
+        """Zwraca klatki animacji z cache."""
+        return Explosion.frames_cache
 
     def update(self):
         """Zmiana klatki animacji i usunięcie po ostatniej."""
