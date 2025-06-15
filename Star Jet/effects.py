@@ -14,7 +14,8 @@ class Explosion(pygame.sprite.Sprite):
         self.animation_speed = 3  # liczba klatek między zmianą obrazka
         self.counter = 0
 
-    def load_frames(self):
+    @staticmethod
+    def preload_frames():
         """Ładujemy klatki animacji z folderu assets/explosion (cache)."""
         if Explosion.frames_cache:
             return Explosion.frames_cache
