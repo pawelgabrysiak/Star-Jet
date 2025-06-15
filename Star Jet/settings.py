@@ -1,13 +1,13 @@
-SCREEN_WIDTH        = 480
-SCREEN_HEIGHT       = 640
-FPS                 = 60
+SCREEN_WIDTH        = 480 
+SCREEN_HEIGHT       = 640 
+FPS                 = 60 
 
 PLAYER_SPEED        = 5
 BULLET_SPEED        = 7
 ENEMY_SPEED         = 2
 
 # ile dzielimy wymiary PNG, aby zmniejszyć
-SCALE_FACTOR        = 3
+SCALE_FACTOR        = 5
 
 # zdrowie
 PLAYER_MAX_HEALTH   = 5

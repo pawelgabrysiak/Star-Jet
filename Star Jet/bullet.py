@@ -6,10 +6,9 @@ class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
         # Tworzymy prostokątny obraz pocisku
-        self.image = pygame.Surface((5, 10))
-        self.image.fill((255, 255, 0))
-        self.rect = self.image.get_rect(center=(x, y))
-
+        self.image = pygame.Surface((5, 10)) # Szerokość 5, wysokość 10
+        self.image.fill((255, 255, 0)) # Kolor żółty
+        self.rect = self.image.get_rect(center=(x, y)) # Ustawiamy środek pocisku na podane współrzędne
     def update(self):
         """Aktualizujemy pozycję pocisku i usuwamy, gdy wyjdzie poza ekran."""
         self.rect.y -= BULLET_SPEED
